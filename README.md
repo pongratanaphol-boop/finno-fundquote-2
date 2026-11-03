@@ -3,7 +3,7 @@
 Copy of the investment-view fund page (K-GTECH only), regrouped per the team comment.
 
 ## Layout
-1. **ข้อมูลกองทุน** (fund information): กลยุทธ์การลงทุน (Morningstar text), then the F PICK reasons.
+1. **ข้อมูลกองทุน** (fund information): นโยบายการลงทุนของกองทุน (Morningstar text), then the F PICK reasons.
 2. **มุมมองการลงทุน** (investment view): Investment view (house category view), then Investment call (recommenders).
 
 Static site, no build step: open `index.html` (serve over http for best results).
