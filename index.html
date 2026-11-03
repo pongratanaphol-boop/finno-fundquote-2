@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Investment View</title>
+<link rel="stylesheet" href="https://use.typekit.net/gru3eoh.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="viewport" id="viewport">
+<header class="site-header">
+  <div class="product-bar">
+    <div class="bar-container">
+      <nav class="product-links" aria-label="Finnomena">
+        <a class="product-link" href="#"><i class="fa-solid" aria-hidden="true">&#xf555;</i><span>Port</span></a>
+        <span class="link-divider" aria-hidden="true"></span>
+        <a class="product-link" href="#"><span>Markets</span><i class="fa-solid" aria-hidden="true">&#xf107;</i></a>
+        <span class="link-divider product-mobile-only" aria-hidden="true"></span>
+        <a class="product-link product-mobile-only" href="#"><span>FINT</span></a>
+        <span class="link-divider" aria-hidden="true"></span>
+        <a class="product-link" href="#"><span>สมัคร FA</span></a>
+      </nav>
+    </div>
+  </div>
+  <div class="nav-bar">
+    <div class="bar-container">
+      <div class="nav-left"><a class="logo" href="#" aria-label="Finnomena"><span class="logo-text">Finnomena</span></a></div>
+      <div class="nav-center">
+        <label class="nav-search">
+          <i class="fa-solid" aria-hidden="true">&#xf002;</i>
+          <input type="search" placeholder="ค้นหาบทความ, หุ้น, กองทุน" aria-label="ค้นหาบทความ, หุ้น, กองทุน">
+        </label>
+      </div>
+      <div class="nav-right">
+        <button class="icon-button nav-mobile-only" type="button" aria-label="ค้นหา"><i class="fa-solid" aria-hidden="true">&#xf002;</i></button>
+        <button class="icon-button nav-mobile-only" type="button" aria-label="บัญชี"><i class="fa-solid" aria-hidden="true">&#xf2bd;</i></button>
+        <button class="pill-button" type="button">ลงชื่อเข้าใช้</button>
+        <button class="pill-button pill-button-primary" type="button">สมัครสมาชิก</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <a class="back-link" href="#"><i class="fa-regular" aria-hidden="true">&#xf104;</i><span>กลับสู่หน้าหลัก</span></a>
+
+  <section class="fund-search">
+    <h2 class="fund-search-title">ค้นหาจากรหัสกองทุน</h2>
+    <label class="fund-search-field">
+      <i class="fa-solid" aria-hidden="true">&#xf002;</i>
+      <input type="search" placeholder="ค้นหาข้อมูลกองทุน" aria-label="ค้นหาข้อมูลกองทุน">
+    </label>
+  </section>
+
+  <section class="fund-header">
+    <div class="fund-title-block">
+      <div class="fund-badges" id="fund-badges"></div>
+      <div class="fund-title-row">
+        <div class="fund-title-left">
+          <h1 class="fund-code" id="fund-code"></h1>
+          <button class="pill-secondary" type="button"><i class="fa-solid" aria-hidden="true">&#xf055;</i><span>เปรียบเทียบกองทุน</span></button>
+        </div>
+        <button class="text-button" type="button"><i class="fa-solid" aria-hidden="true">&#xf14d;</i><span>แชร์</span></button>
+      </div>
+      <p class="fund-name" id="fund-name"></p>
+    </div>
+    <div class="price-row">
+      <div class="price-block">
+        <p class="price" id="fund-price"></p>
+        <p class="price-date"><i class="fa-regular" aria-hidden="true">&#xf017;</i><span id="fund-price-date"></span></p>
+      </div>
+      <div class="price-actions">
+        <button class="button-primary" type="button">ลงทุนในกองนี้</button>
+        <button class="button-secondary" type="button"><i class="fa-solid" aria-hidden="true">&#x2b;</i><span>ติดตาม</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="tabs-block">
+    <div class="main-tabs" role="tablist" aria-label="หัวข้อ">
+      <button class="main-tab is-active" type="button" role="tab" aria-selected="true">ภาพรวม</button>
+      <button class="main-tab" type="button" role="tab" aria-selected="false">กราฟ</button>
+      <button class="main-tab" type="button" role="tab" aria-selected="false">ผลการดำเนินงานและปันผล</button>
+      <button class="main-tab" type="button" role="tab" aria-selected="false">พอร์ตการลงทุน</button>
+      <button class="main-tab" type="button" role="tab" aria-selected="false">ค่าธรรมเนียม</button>
+    </div>
+    <div class="range-bar">
+      <div class="range-tabs" id="range-tabs" role="group" aria-label="ช่วงเวลา"></div>
+    </div>
+    <p class="range-dates" id="range-dates"></p>
+  </section>
+
+  <section class="performance">
+    <div class="chart-section">
+      <div class="headline-row">
+        <p class="headline" id="headline" aria-live="polite"></p>
+        <button class="switch" id="dividend-switch" type="button" role="switch" aria-checked="false">
+          <span class="switch-label">รวมปันผล</span>
+          <span class="switch-track"><span class="switch-thumb"></span></span>
+        </button>
+      </div>
+      <div class="chart-block">
+        <div class="chart-head">
+          <div class="view-toggle" role="tablist" aria-label="มุมมองกราฟ">
+            <button class="view-option is-active" type="button" role="tab" aria-selected="true" data-view="price">ราคา</button>
+            <img class="view-divider" src="assets/divider.svg" alt="" width="1" height="18">
+            <button class="view-option" type="button" role="tab" aria-selected="false" data-view="aum">มูลค่าทรัพย์สิน</button>
+          </div>
+          <button class="pill-secondary" type="button"><i class="fa-solid" aria-hidden="true">&#xe0e3;</i><span>กราฟเทคนิค</span></button>
+        </div>
+        <div class="chart" id="chart" tabindex="0" role="img" aria-label="กราฟราคา"></div>
+      </div>
+    </div>
+
+    <div class="returns-strip">
+      <p class="returns-title">ผลตอบแทน</p>
+      <div class="returns-stats" id="returns-stats"></div>
+      <button class="text-button" type="button"><span>ดูทั้งหมด</span><i class="fa-regular" aria-hidden="true">&#xf105;</i></button>
+    </div>
+  </section>
+
+  <!-- Section 1: fund information (Morningstar strategy text + F PICK text) -->
+  <section class="group" id="group-fund" aria-labelledby="group-fund-title">
+    <h2 class="group-title" id="group-fund-title">ข้อมูลกองทุน</h2>
+    <div class="strategy">
+      <h3 class="section-title">กลยุทธ์การลงทุน</h3>
+      <p class="strategy-text" id="strategy-text"></p>
+    </div>
+    <div class="fund-pick" id="fund-pick" hidden></div>
+  </section>
+
+  <!-- Section 2: investment view (house category view), then investment call (recommenders) -->
+  <section class="group" id="group-view" aria-labelledby="group-view-title" hidden>
+    <h2 class="group-title" id="group-view-title">มุมมองการลงทุน</h2>
+    <div class="investment-view" id="investment-view"></div>
+  </section>
+
+  <div class="real-sections" id="real-sections"></div>
+</main>
+</div>
+
+<script src="data.js"></script>
+<script src="investment-calls.js"></script>
+<script src="investment-view-data.js"></script>
+<script src="investment-pick-reasons.js"></script>
+<script src="investment-view.js"></script>
+<script src="case-panel.js"></script>
+<script src="real-sections-data.js"></script>
+<script src="real-sections.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
+
